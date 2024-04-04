@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
   
       // 🚨 Get input values
       const studentNameInput = document.getElementById('studentName');
-      const personalMessageInput = ;
-      const courseNameInput = ; 
+      const personalMessageInput =document.getElementById('personalMessage');
+      const courseNameInput = document.getElementById('courseName'); 
   
       const studentName = studentNameInput.value;
       const personalMessage = personalMessageInput.value;
@@ -25,8 +25,15 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   
       // 🚨 Generate certificate content dynamically
-      certificateContent. = `
+      certificateContent.innerHTML = `
+      <h1> Certificate of Achivement</h1>
+      <p>This is to certify that</>
       <h3>${studentName}</h3>
+      <p>Has almost completed the</p>
+      <h3>${courseName}</h3>
+      <p>With legendary Perceverance and world-class bad-assery for never giving up&#127942;</>
+      <img src="logo.png" style="margin-top: 20px; max-height: 100px;">
+      <p>${personalMessage}&#x1F63B;</p>
     `;
     
       //  Display the modal
@@ -39,8 +46,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   
     //  🚨 Close the modal when the close button is clicked
-    closeModal.('', function () {
-      
+    closeModal.addEventListener('click', function () {
+        modal.style.display='none'
     });
   });
   
